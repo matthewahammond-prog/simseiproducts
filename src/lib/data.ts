@@ -57,7 +57,7 @@ const defaultProducts: Product[] = [
     name: "Smart Whiteboard 75\"",
     description: "Interactive touch display with real-time collaboration. Integrates with all major video conferencing platforms.",
     category: "Electronics",
-    price: 4999,
+    
     image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=600&h=400&fit=crop",
     specs: { Display: "4K UHD", "Touch Points": "20", OS: "Android 12", Connectivity: "Wi-Fi 6 + Ethernet" },
     visibleTo: ["s1"],
