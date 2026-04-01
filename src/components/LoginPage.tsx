@@ -44,7 +44,7 @@ export default function LoginPage() {
           <Tabs defaultValue="stakeholder">
             <CardHeader className="pb-4">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="stakeholder">Stakeholder</TabsTrigger>
+                <TabsTrigger value="stakeholder">Team Member</TabsTrigger>
                 <TabsTrigger value="admin">Admin</TabsTrigger>
               </TabsList>
             </CardHeader>
