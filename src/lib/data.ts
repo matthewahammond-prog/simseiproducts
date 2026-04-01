@@ -67,7 +67,7 @@ const defaultProducts: Product[] = [
     name: "Modular Shelving System",
     description: "Configurable wall-mounted shelving in powder-coated steel. Expand and reconfigure as needs change.",
     category: "Furniture",
-    price: 599,
+    
     image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&h=400&fit=crop",
     specs: { Material: "Powder-coated Steel", Modules: "6 included", "Max Load": "30kg/shelf", Colors: "Black, White, Sage" },
     visibleTo: ["s1", "s2", "s3"],
