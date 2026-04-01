@@ -47,7 +47,7 @@ const defaultProducts: Product[] = [
     name: "Wireless Conference Speaker",
     description: "360° omnidirectional microphone array with noise cancellation. Supports up to 20 participants.",
     category: "Electronics",
-    price: 399,
+    
     image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=400&fit=crop",
     specs: { Connectivity: "Bluetooth 5.2 + USB-C", Battery: "12 hours", Range: "15m", Drivers: "4× 40mm" },
     visibleTo: ["s2", "s3"],
