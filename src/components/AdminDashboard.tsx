@@ -117,7 +117,7 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
     name: product?.name || "",
     description: product?.description || "",
     category: product?.category || "",
-    price: product?.price?.toString() || "",
+    
     image: product?.image || "",
     specs: product ? Object.entries(product.specs).map(([k, v]) => `${k}: ${v}`).join("\n") : "",
     visibleTo: product?.visibleTo || [],
