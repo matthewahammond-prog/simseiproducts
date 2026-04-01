@@ -94,7 +94,7 @@ function ProductsTab({ products, stakeholders, onRefresh }: { products: Product[
                 <p className="font-medium text-foreground truncate">{product.name}</p>
                 <div className="flex gap-2 mt-1">
                   <Badge variant="secondary" className="text-xs">{product.category}</Badge>
-                  <span className="text-xs text-muted-foreground">${product.price.toLocaleString()}</span>
+                  
                   <span className="text-xs text-muted-foreground">· Visible to {product.visibleTo.length} stakeholder(s)</span>
                 </div>
               </div>
