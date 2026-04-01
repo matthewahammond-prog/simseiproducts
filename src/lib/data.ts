@@ -77,7 +77,7 @@ const defaultProducts: Product[] = [
     name: "LED Desk Lamp Pro",
     description: "Color temperature adjustable from 2700K to 6500K. Built-in wireless charging pad and USB-C port.",
     category: "Accessories",
-    price: 189,
+    
     image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
     specs: { Brightness: "1200 lux", "Color Temp": "2700-6500K", Power: "12W", Height: "45cm" },
     visibleTo: ["s2", "s3"],
