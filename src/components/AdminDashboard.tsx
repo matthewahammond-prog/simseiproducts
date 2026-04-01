@@ -188,15 +188,9 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
             <Label>Description</Label>
             <Textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+          <div className="space-y-2">
               <Label>Category *</Label>
               <Input value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} />
-            </div>
-            <div className="space-y-2">
-              <Label>Price *</Label>
-              <Input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} />
-            </div>
           </div>
           <div className="space-y-2">
             <Label>Image URL</Label>

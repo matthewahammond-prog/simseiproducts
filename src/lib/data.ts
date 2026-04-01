@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   description: string;
   category: string;
-  price: number;
+  
   image: string;
   specs: Record<string, string>;
   visibleTo: string[]; // stakeholder IDs

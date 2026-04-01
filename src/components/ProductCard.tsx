@@ -36,7 +36,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <div>
             <Badge variant="secondary" className="mb-3">{product.category}</Badge>
             <p className="text-muted-foreground mb-4">{product.description}</p>
-            <p className="text-2xl font-semibold text-foreground mb-4">${product.price.toLocaleString()}</p>
+            
             <div className="space-y-2">
               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider">Specifications</h4>
               {Object.entries(product.specs).map(([key, value]) => (
