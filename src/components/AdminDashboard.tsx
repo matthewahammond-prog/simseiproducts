@@ -124,7 +124,7 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
   });
 
   const handleSubmit = () => {
-    if (!form.name || !form.category || !form.price) {
+    if (!form.name || !form.category) {
       toast({ title: "Please fill required fields", variant: "destructive" });
       return;
     }
