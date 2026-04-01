@@ -94,7 +94,7 @@ function ProductsTab({ products, stakeholders, onRefresh }: { products: Product[
                 <p className="font-medium text-foreground truncate">{product.name}</p>
                 <div className="flex gap-2 mt-1">
                   <Badge variant="secondary" className="text-xs">{product.category}</Badge>
-                  <span className="text-xs text-muted-foreground">${product.price.toLocaleString()}</span>
+                  
                   <span className="text-xs text-muted-foreground">· Visible to {product.visibleTo.length} stakeholder(s)</span>
                 </div>
               </div>
@@ -117,14 +117,14 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
     name: product?.name || "",
     description: product?.description || "",
     category: product?.category || "",
-    price: product?.price?.toString() || "",
+    
     image: product?.image || "",
     specs: product ? Object.entries(product.specs).map(([k, v]) => `${k}: ${v}`).join("\n") : "",
     visibleTo: product?.visibleTo || [],
   });
 
   const handleSubmit = () => {
-    if (!form.name || !form.category || !form.price) {
+    if (!form.name || !form.category) {
       toast({ title: "Please fill required fields", variant: "destructive" });
       return;
     }
@@ -139,7 +139,7 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
       name: form.name,
       description: form.description,
       category: form.category,
-      price: parseFloat(form.price),
+      
       image: form.image || "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
       specs,
       visibleTo: form.visibleTo,
@@ -188,15 +188,9 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
             <Label>Description</Label>
             <Textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+          <div className="space-y-2">
               <Label>Category *</Label>
               <Input value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} />
-            </div>
-            <div className="space-y-2">
-              <Label>Price *</Label>
-              <Input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} />
-            </div>
           </div>
           <div className="space-y-2">
             <Label>Image URL</Label>

@@ -21,7 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </Badge>
             <h3 className="font-serif text-xl text-foreground mb-1">{product.name}</h3>
             <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{product.description}</p>
-            <p className="text-lg font-semibold text-foreground">${product.price.toLocaleString()}</p>
+            
           </CardContent>
         </Card>
       </DialogTrigger>
@@ -36,7 +36,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <div>
             <Badge variant="secondary" className="mb-3">{product.category}</Badge>
             <p className="text-muted-foreground mb-4">{product.description}</p>
-            <p className="text-2xl font-semibold text-foreground mb-4">${product.price.toLocaleString()}</p>
+            
             <div className="space-y-2">
               <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider">Specifications</h4>
               {Object.entries(product.specs).map(([key, value]) => (
