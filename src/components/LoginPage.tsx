@@ -68,7 +68,7 @@ export default function LoginPage() {
 
               <TabsContent value="admin" className="mt-0">
                 <CardTitle className="text-lg mb-1">Admin Access</CardTitle>
-                <CardDescription className="mb-4">Manage products and stakeholder visibility</CardDescription>
+                <CardDescription className="mb-4">Manage products and team member visibility</CardDescription>
                 <form onSubmit={handleAdminLogin} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="admin-pw">Admin Password</Label>
