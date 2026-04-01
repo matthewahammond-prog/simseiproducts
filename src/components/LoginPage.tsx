@@ -51,7 +51,7 @@ export default function LoginPage() {
 
             <CardContent>
               <TabsContent value="stakeholder" className="mt-0">
-                <CardTitle className="text-lg mb-1">Stakeholder Login</CardTitle>
+                <CardTitle className="text-lg mb-1">Team Member Login</CardTitle>
                 <CardDescription className="mb-4">Access your personalized product catalog</CardDescription>
                 <form onSubmit={handleStakeholderLogin} className="space-y-4">
                   <div className="space-y-2">
