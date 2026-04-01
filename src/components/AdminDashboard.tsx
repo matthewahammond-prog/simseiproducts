@@ -43,7 +43,7 @@ export default function AdminDashboard() {
       <div className="container py-8">
         <div className="grid grid-cols-3 gap-4 mb-8">
           <Card><CardContent className="pt-6 text-center"><Package className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{products.length}</p><p className="text-sm text-muted-foreground">Products</p></CardContent></Card>
-          <Card><CardContent className="pt-6 text-center"><Users className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{stakeholders.length}</p><p className="text-sm text-muted-foreground">Stakeholders</p></CardContent></Card>
+          <Card><CardContent className="pt-6 text-center"><Users className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{stakeholders.length}</p><p className="text-sm text-muted-foreground">Team Members</p></CardContent></Card>
           <Card><CardContent className="pt-6 text-center"><Eye className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{[...new Set(products.map(p => p.category))].length}</p><p className="text-sm text-muted-foreground">Categories</p></CardContent></Card>
         </div>
 
