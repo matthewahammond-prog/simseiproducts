@@ -139,7 +139,7 @@ function ProductFormDialog({ product, stakeholders, onSave }: { product?: Produc
       name: form.name,
       description: form.description,
       category: form.category,
-      price: parseFloat(form.price),
+      
       image: form.image || "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
       specs,
       visibleTo: form.visibleTo,
