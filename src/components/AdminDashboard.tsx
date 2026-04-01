@@ -43,14 +43,14 @@ export default function AdminDashboard() {
       <div className="container py-8">
         <div className="grid grid-cols-3 gap-4 mb-8">
           <Card><CardContent className="pt-6 text-center"><Package className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{products.length}</p><p className="text-sm text-muted-foreground">Products</p></CardContent></Card>
-          <Card><CardContent className="pt-6 text-center"><Users className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{stakeholders.length}</p><p className="text-sm text-muted-foreground">Stakeholders</p></CardContent></Card>
+          <Card><CardContent className="pt-6 text-center"><Users className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{stakeholders.length}</p><p className="text-sm text-muted-foreground">Team Members</p></CardContent></Card>
           <Card><CardContent className="pt-6 text-center"><Eye className="h-6 w-6 mx-auto mb-2 text-accent" /><p className="text-2xl font-bold">{[...new Set(products.map(p => p.category))].length}</p><p className="text-sm text-muted-foreground">Categories</p></CardContent></Card>
         </div>
 
         <Tabs defaultValue="products">
           <TabsList className="mb-6">
             <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="stakeholders">Stakeholders</TabsTrigger>
+            <TabsTrigger value="stakeholders">Team Members</TabsTrigger>
             <TabsTrigger value="visibility">Visibility Matrix</TabsTrigger>
           </TabsList>
 
@@ -95,7 +95,7 @@ function ProductsTab({ products, stakeholders, onRefresh }: { products: Product[
                 <div className="flex gap-2 mt-1">
                   <Badge variant="secondary" className="text-xs">{product.category}</Badge>
                   
-                  <span className="text-xs text-muted-foreground">· Visible to {product.visibleTo.length} stakeholder(s)</span>
+                  <span className="text-xs text-muted-foreground">· Visible to {product.visibleTo.length} team member(s)</span>
                 </div>
               </div>
               <ProductFormDialog product={product} stakeholders={stakeholders} onSave={onRefresh} />
@@ -233,13 +233,13 @@ function StakeholdersTab({ stakeholders, onRefresh }: { stakeholders: Stakeholde
     });
     saveProducts(products);
     onRefresh();
-    toast({ title: "Stakeholder removed" });
+    toast({ title: "Team member removed" });
   };
 
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-serif">Stakeholders</h2>
+        <h2 className="text-2xl font-serif">Team Members</h2>
         <StakeholderFormDialog onSave={onRefresh} />
       </div>
       <div className="space-y-3">
@@ -289,7 +289,7 @@ function StakeholderFormDialog({ stakeholder, onSave }: { stakeholder?: Stakehol
     }
     saveStakeholders(all);
     onSave();
-    toast({ title: isEdit ? "Stakeholder updated" : "Stakeholder added" });
+    toast({ title: isEdit ? "Team member updated" : "Team member added" });
   };
 
   return (
@@ -298,12 +298,12 @@ function StakeholderFormDialog({ stakeholder, onSave }: { stakeholder?: Stakehol
         {isEdit ? (
           <Button variant="ghost" size="icon"><Pencil className="h-4 w-4" /></Button>
         ) : (
-          <Button size="sm"><Plus className="h-4 w-4 mr-1" /> Add Stakeholder</Button>
+          <Button size="sm"><Plus className="h-4 w-4 mr-1" /> Add Team Member</Button>
         )}
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="font-serif">{isEdit ? "Edit Stakeholder" : "Add Stakeholder"}</DialogTitle>
+          <DialogTitle className="font-serif">{isEdit ? "Edit Team Member" : "Add Team Member"}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div className="space-y-2"><Label>Name *</Label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></div>
@@ -338,7 +338,7 @@ function VisibilityTab({ products, stakeholders, onRefresh }: { products: Produc
   return (
     <div>
       <h2 className="text-2xl font-serif mb-4">Visibility Matrix</h2>
-      <p className="text-sm text-muted-foreground mb-4">Toggle which products each stakeholder can see in their catalog.</p>
+      <p className="text-sm text-muted-foreground mb-4">Toggle which products each team member can see in their catalog.</p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>

@@ -44,14 +44,14 @@ export default function LoginPage() {
           <Tabs defaultValue="stakeholder">
             <CardHeader className="pb-4">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="stakeholder">Stakeholder</TabsTrigger>
+                <TabsTrigger value="stakeholder">Team Member</TabsTrigger>
                 <TabsTrigger value="admin">Admin</TabsTrigger>
               </TabsList>
             </CardHeader>
 
             <CardContent>
               <TabsContent value="stakeholder" className="mt-0">
-                <CardTitle className="text-lg mb-1">Stakeholder Login</CardTitle>
+                <CardTitle className="text-lg mb-1">Team Member Login</CardTitle>
                 <CardDescription className="mb-4">Access your personalized product catalog</CardDescription>
                 <form onSubmit={handleStakeholderLogin} className="space-y-4">
                   <div className="space-y-2">
@@ -68,7 +68,7 @@ export default function LoginPage() {
 
               <TabsContent value="admin" className="mt-0">
                 <CardTitle className="text-lg mb-1">Admin Access</CardTitle>
-                <CardDescription className="mb-4">Manage products and stakeholder visibility</CardDescription>
+                <CardDescription className="mb-4">Manage products and team member visibility</CardDescription>
                 <form onSubmit={handleAdminLogin} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="admin-pw">Admin Password</Label>
@@ -82,7 +82,7 @@ export default function LoginPage() {
         </Card>
 
         <p className="text-center text-xs text-muted-foreground mt-6">
-          Demo credentials — Stakeholder: sarah@acmecorp.com / acme2024 · Admin: admin123
+          Demo credentials — Team Member: sarah@acmecorp.com / acme2024 · Admin: admin123
         </p>
       </div>
     </div>
