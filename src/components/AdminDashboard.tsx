@@ -239,7 +239,7 @@ function StakeholdersTab({ stakeholders, onRefresh }: { stakeholders: Stakeholde
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-serif">Stakeholders</h2>
+        <h2 className="text-2xl font-serif">Team Members</h2>
         <StakeholderFormDialog onSave={onRefresh} />
       </div>
       <div className="space-y-3">
