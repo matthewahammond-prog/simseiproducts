@@ -298,7 +298,7 @@ function StakeholderFormDialog({ stakeholder, onSave }: { stakeholder?: Stakehol
         {isEdit ? (
           <Button variant="ghost" size="icon"><Pencil className="h-4 w-4" /></Button>
         ) : (
-          <Button size="sm"><Plus className="h-4 w-4 mr-1" /> Add Stakeholder</Button>
+          <Button size="sm"><Plus className="h-4 w-4 mr-1" /> Add Team Member</Button>
         )}
       </DialogTrigger>
       <DialogContent>
