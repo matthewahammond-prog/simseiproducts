@@ -233,7 +233,7 @@ function StakeholdersTab({ stakeholders, onRefresh }: { stakeholders: Stakeholde
     });
     saveProducts(products);
     onRefresh();
-    toast({ title: "Stakeholder removed" });
+    toast({ title: "Team member removed" });
   };
 
   return (
