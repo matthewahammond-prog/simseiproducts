@@ -50,7 +50,7 @@ export default function AdminDashboard() {
         <Tabs defaultValue="products">
           <TabsList className="mb-6">
             <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="stakeholders">Stakeholders</TabsTrigger>
+            <TabsTrigger value="stakeholders">Team Members</TabsTrigger>
             <TabsTrigger value="visibility">Visibility Matrix</TabsTrigger>
           </TabsList>
 
