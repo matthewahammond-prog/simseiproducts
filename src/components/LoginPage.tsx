@@ -82,7 +82,7 @@ export default function LoginPage() {
         </Card>
 
         <p className="text-center text-xs text-muted-foreground mt-6">
-          Demo credentials — Stakeholder: sarah@acmecorp.com / acme2024 · Admin: admin123
+          Demo credentials — Team Member: sarah@acmecorp.com / acme2024 · Admin: admin123
         </p>
       </div>
     </div>

@@ -338,7 +338,7 @@ function VisibilityTab({ products, stakeholders, onRefresh }: { products: Produc
   return (
     <div>
       <h2 className="text-2xl font-serif mb-4">Visibility Matrix</h2>
-      <p className="text-sm text-muted-foreground mb-4">Toggle which products each stakeholder can see in their catalog.</p>
+      <p className="text-sm text-muted-foreground mb-4">Toggle which products each team member can see in their catalog.</p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
