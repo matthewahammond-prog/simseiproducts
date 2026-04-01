@@ -95,7 +95,7 @@ function ProductsTab({ products, stakeholders, onRefresh }: { products: Product[
                 <div className="flex gap-2 mt-1">
                   <Badge variant="secondary" className="text-xs">{product.category}</Badge>
                   
-                  <span className="text-xs text-muted-foreground">· Visible to {product.visibleTo.length} stakeholder(s)</span>
+                  <span className="text-xs text-muted-foreground">· Visible to {product.visibleTo.length} team member(s)</span>
                 </div>
               </div>
               <ProductFormDialog product={product} stakeholders={stakeholders} onSave={onRefresh} />
