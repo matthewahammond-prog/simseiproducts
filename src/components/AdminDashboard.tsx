@@ -289,7 +289,7 @@ function StakeholderFormDialog({ stakeholder, onSave }: { stakeholder?: Stakehol
     }
     saveStakeholders(all);
     onSave();
-    toast({ title: isEdit ? "Stakeholder updated" : "Stakeholder added" });
+    toast({ title: isEdit ? "Team member updated" : "Team member added" });
   };
 
   return (
