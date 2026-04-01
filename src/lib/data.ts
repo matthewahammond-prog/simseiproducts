@@ -22,66 +22,52 @@ const STAKEHOLDERS_KEY = "catalog_stakeholders";
 const ADMIN_PASSWORD = "admin123"; // Simple demo admin
 
 const defaultProducts: Product[] = [
-  {
-    id: "p1",
-    name: "Premium Oak Desk",
-    description: "Handcrafted solid oak desk with cable management and adjustable height mechanism. Perfect for executive offices.",
-    category: "Furniture",
-    
-    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&h=400&fit=crop",
-    specs: { Material: "Solid Oak", Dimensions: "160×80×75cm", Weight: "45kg", Warranty: "5 years" },
-    visibleTo: ["s1", "s2"],
-  },
-  {
-    id: "p2",
-    name: "Ergonomic Task Chair",
-    description: "Advanced lumbar support with breathable mesh back. Fully adjustable armrests and seat depth.",
-    category: "Furniture",
-    
-    image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&h=400&fit=crop",
-    specs: { Material: "Mesh + Aluminum", "Max Weight": "150kg", Adjustments: "12-point", Warranty: "10 years" },
-    visibleTo: ["s1", "s3"],
-  },
-  {
-    id: "p3",
-    name: "Wireless Conference Speaker",
-    description: "360° omnidirectional microphone array with noise cancellation. Supports up to 20 participants.",
-    category: "Electronics",
-    
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=400&fit=crop",
-    specs: { Connectivity: "Bluetooth 5.2 + USB-C", Battery: "12 hours", Range: "15m", Drivers: "4× 40mm" },
-    visibleTo: ["s2", "s3"],
-  },
-  {
-    id: "p4",
-    name: "Smart Whiteboard 75\"",
-    description: "Interactive touch display with real-time collaboration. Integrates with all major video conferencing platforms.",
-    category: "Electronics",
-    
-    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=600&h=400&fit=crop",
-    specs: { Display: "4K UHD", "Touch Points": "20", OS: "Android 12", Connectivity: "Wi-Fi 6 + Ethernet" },
-    visibleTo: ["s1"],
-  },
-  {
-    id: "p5",
-    name: "Modular Shelving System",
-    description: "Configurable wall-mounted shelving in powder-coated steel. Expand and reconfigure as needs change.",
-    category: "Furniture",
-    
-    image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&h=400&fit=crop",
-    specs: { Material: "Powder-coated Steel", Modules: "6 included", "Max Load": "30kg/shelf", Colors: "Black, White, Sage" },
-    visibleTo: ["s1", "s2", "s3"],
-  },
-  {
-    id: "p6",
-    name: "LED Desk Lamp Pro",
-    description: "Color temperature adjustable from 2700K to 6500K. Built-in wireless charging pad and USB-C port.",
-    category: "Accessories",
-    
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
-    specs: { Brightness: "1200 lux", "Color Temp": "2700-6500K", Power: "12W", Height: "45cm" },
-    visibleTo: ["s2", "s3"],
-  },
+  // === Skills Exercises ===
+  { id: "p1", name: "LTS01, SIMSEI PEGBOARD EXERCISE", description: "SIMSEI Pegboard Exercise", category: "Skills Exercises", image: "", specs: { "Item Number": "777000901" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p2", name: "LTS02, SIMSEI TISSUE PLATFORM 1/EA", description: "SIMSEI Tissue Platform", category: "Skills Exercises", image: "", specs: { "Item Number": "777024001" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p3", name: "LTS03, SIMSEI TISSUE MODEL 10/PK", description: "SIMSEI Tissue Model, 10 pack", category: "Skills Exercises", image: "", specs: { "Item Number": "777023901" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p4", name: "LTS04, SIMSEI DISSECTION MODEL 5/PK", description: "SIMSEI Dissection Model, 5 pack", category: "Skills Exercises", image: "", specs: { "Item Number": "777052172" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p5", name: "LTS05, SIMSEI SUTURE PASSING EXERCISE", description: "SIMSEI Suture Passing Exercise", category: "Skills Exercises", image: "", specs: { "Item Number": "777052753" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p6", name: "LTS06, SIMSEI 0° CAMERA NAVIGATION EXERCISE", description: "SIMSEI 0° Camera Navigation Exercise", category: "Skills Exercises", image: "", specs: { "Item Number": "777052644" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p7", name: "LTS07, SIMSEI TISSUE MODEL 1/EA", description: "SIMSEI Tissue Model, single", category: "Skills Exercises", image: "", specs: { "Item Number": "777053060" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p8", name: "LTS08, SIMSEI DISSECTION MODEL 1/EA", description: "SIMSEI Dissection Model, single", category: "Skills Exercises", image: "", specs: { "Item Number": "777053062" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p9", name: "LTS09, SIMSEI MULTISKILL EXERCISE 1/EA", description: "SIMSEI Multiskill Exercise", category: "Skills Exercises", image: "", specs: { "Item Number": "777053424" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Task Trainers & Models ===
+  { id: "p10", name: "LTT01, SIMSEI GALLBLADDER BASE", description: "SIMSEI Gallbladder Base", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777020101" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p11", name: "LTT02, SIMSEI GALLBLADDER MODEL 1/EA", description: "SIMSEI Gallbladder Model, single", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777014201" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p12", name: "LTT03, SIMSEI GALLBLADDER MODEL 5/PK", description: "SIMSEI Gallbladder Model, 5 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777014301" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p13", name: "LTT04, SIMSEI VAGINAL CUFF MODEL 1/EA", description: "SIMSEI Vaginal Cuff Model, single", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777053071" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p14", name: "LTT05, SIMSEI GYN MODEL 1/EA", description: "SIMSEI GYN Model, single", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777031301" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p15", name: "LTT11, SIMSEI FIRST ENTRY MODEL 1/EA", description: "SIMSEI First Entry Model, single", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777053042" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p16", name: "LTT17, SIMSEI GYN MODEL 1/EA", description: "SIMSEI GYN Model, single", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777052561" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p17", name: "LTT06, SIMSEI TRANSANAL ADAPTER", description: "SIMSEI Transanal Adapter", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777004801" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p18", name: "LTT07, SIMSEI RECTUM MODEL 3/PK", description: "SIMSEI Rectum Model, 3 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777004901" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p19", name: "LTT27, SIMSEI SUTURABLE RECTUM MODEL 5/PK", description: "SIMSEI Suturable Rectum Model, 5 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777052015" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p20", name: "LTT08, SIMSEI VAGINAL CUFF BASE", description: "SIMSEI Vaginal Cuff Base", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777051801" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p21", name: "LTT09, SIMSEI VAGINAL CUFF MODEL 10/PK", description: "SIMSEI Vaginal Cuff Model, 10 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777030901" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p22", name: "LTT10, SIMSEI FIRST ENTRY MODEL 4/PK", description: "SIMSEI First Entry Model, 4 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777026601" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p23", name: "LTT12, SIMSEI ANASTOMOSIS MODEL 10/PK", description: "SIMSEI Anastomosis Model, 10 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777029801" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p24", name: "LTT13, SIMSEI ANASTOMOSIS MODEL 2/EA", description: "SIMSEI Anastomosis Model, 2 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777053063" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p25", name: "LTT14, SIMSEI APPENDECTOMY MODEL", description: "SIMSEI Appendectomy Model", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777046101" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p26", name: "LTT18, SIMSEI EXTRACTION INSERT 1/EA", description: "SIMSEI Extraction Insert, single", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777052188" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p27", name: "LTT19, SIMSEI SIMULATED UTERUS MODEL", description: "SIMSEI Simulated Uterus Model", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777052346" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p28", name: "LTT20, SIMSEI RENAL HILUM MODEL", description: "SIMSEI Renal Hilum Model", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777052736" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p29", name: "LTT28, SIMSEI ECTOPIC PREGNANCY MODEL", description: "SIMSEI Ectopic Pregnancy Model", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777053403" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p30", name: "LTT29, SIMSEI OVARIAN CYST TORSION MODEL", description: "SIMSEI Ovarian Cyst Torsion Model", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777053404" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p31", name: "LTT31, SIMSEI COLPOTOMY MODEL", description: "SIMSEI Colpotomy Model", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777053595" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Consumables ===
+  { id: "p32", name: "LTC11, SIMSEI LARGE AB WALL INSERT 4/PK", description: "SIMSEI Large Ab Wall Insert, 4 pack", category: "Consumables", image: "", specs: { "Item Number": "777007601" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p33", name: "LTC14, SIMSEI SMALL AB WALL INSERT 15/PK", description: "SIMSEI Small Ab Wall Insert, 15 pack", category: "Consumables", image: "", specs: { "Item Number": "777008301" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p34", name: "LTC09, SIMSEI LARGE AB WALL INSERT 4/PK (BASIC)", description: "SIMSEI Large Ab Wall Insert (Basic), 4 pack", category: "Consumables", image: "", specs: { "Item Number": "777049401" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p35", name: "LTC10, SIMSEI SMALL AB WALL INSERT 4/PK (BASIC)", description: "SIMSEI Small Ab Wall Insert (Basic), 4 pack", category: "Consumables", image: "", specs: { "Item Number": "777049301" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Trainers ===
+  { id: "p36", name: "LT001, SIMSEI LAPAROSCOPIC TRAINER (Gen 1 Camera)", description: "SIMSEI Laparoscopic Trainer with Gen 1 Camera", category: "Trainers", image: "", specs: { "Item Number": "777052331" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p37", name: "LT001, SIMSEI LAPAROSCOPIC TRAINER (Gen 2 Camera)", description: "SIMSEI Laparoscopic Trainer with Gen 2 Camera", category: "Trainers", image: "", specs: { "Item Number": "777053001" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p38", name: "LT001, SIMSEI LAPAROSCOPIC TRAINER (Gen 3 Camera)", description: "SIMSEI Laparoscopic Trainer with Gen 3 Camera", category: "Trainers", image: "", specs: { "Item Number": "777053718" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p39", name: "LT002, SIMSEI LAPAROSCOPIC TRAINER EF", description: "SIMSEI Laparoscopic Trainer EF", category: "Trainers", image: "", specs: { "Item Number": "777052175" }, visibleTo: ["s1", "s2", "s3"] },
 ];
 
 const defaultStakeholders: Stakeholder[] = [
