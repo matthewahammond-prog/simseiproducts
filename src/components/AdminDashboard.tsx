@@ -303,7 +303,7 @@ function StakeholderFormDialog({ stakeholder, onSave }: { stakeholder?: Stakehol
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="font-serif">{isEdit ? "Edit Stakeholder" : "Add Stakeholder"}</DialogTitle>
+          <DialogTitle className="font-serif">{isEdit ? "Edit Team Member" : "Add Team Member"}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div className="space-y-2"><Label>Name *</Label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></div>
