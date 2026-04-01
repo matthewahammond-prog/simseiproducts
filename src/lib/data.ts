@@ -68,6 +68,49 @@ const defaultProducts: Product[] = [
   { id: "p37", name: "LT001, SIMSEI LAPAROSCOPIC TRAINER (Gen 2 Camera)", description: "SIMSEI Laparoscopic Trainer with Gen 2 Camera", category: "Trainers", image: "", specs: { "Item Number": "777053001" }, visibleTo: ["s1", "s2", "s3"] },
   { id: "p38", name: "LT001, SIMSEI LAPAROSCOPIC TRAINER (Gen 3 Camera)", description: "SIMSEI Laparoscopic Trainer with Gen 3 Camera", category: "Trainers", image: "", specs: { "Item Number": "777053718" }, visibleTo: ["s1", "s2", "s3"] },
   { id: "p39", name: "LT002, SIMSEI LAPAROSCOPIC TRAINER EF", description: "SIMSEI Laparoscopic Trainer EF", category: "Trainers", image: "", specs: { "Item Number": "777052175" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Accessories ===
+  { id: "p40", name: "LTA11, SIMSEI 10mm 0° CAMERA (Gen 1)", description: "SIMSEI 10mm 0° Camera, Gen 1", category: "Accessories", image: "", specs: { "Item Number": "777052321" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p41", name: "LTA11, SIMSEI 10mm 0° CAMERA (Gen 2)", description: "SIMSEI 10mm 0° Camera, Gen 2", category: "Accessories", image: "", specs: { "Item Number": "777052941" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p42", name: "LTA11, SIMSEI 10mm 0° CAMERA (Gen 3)", description: "SIMSEI 10mm 0° Camera, Gen 3", category: "Accessories", image: "", specs: { "Item Number": "777053717" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p43", name: "LTA12, SIMSEI CAMERA HOLDER", description: "SIMSEI Camera Holder", category: "Accessories", image: "", specs: { "Item Number": "777052326" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p44", name: "LTA13, SCOPE HOLDER THUMB SCREW", description: "Scope Holder Thumb Screw", category: "Accessories", image: "", specs: { "Item Number": "777053323" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p45", name: "LTA15, SIMSEI 10mm 30° CAMERA (Gen 1)", description: "SIMSEI 10mm 30° Camera, Gen 1", category: "Accessories", image: "", specs: { "Item Number": "777053450" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p46", name: "LTA22, SIMSEI LAPAROSCOPIC INSERT", description: "SIMSEI Laparoscopic Insert", category: "Accessories", image: "", specs: { "Item Number": "777052749" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p47", name: "LTA20, SIMSEI DEMO INSERT", description: "SIMSEI Demo Insert", category: "Accessories", image: "", specs: { "Item Number": "777008601" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p48", name: "LTA23, SIMSEI SMALL AB WALL HOLDER", description: "SIMSEI Small Ab Wall Holder", category: "Accessories", image: "", specs: { "Item Number": "777008501" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p49", name: "LTA21, SIMSEI ADJUSTABLE LEGS", description: "SIMSEI Adjustable Legs", category: "Accessories", image: "", specs: { "Item Number": "777008701" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p50", name: "LTA30, SIMSEI CAMERA CASE", description: "SIMSEI Camera Case", category: "Accessories", image: "", specs: { "Item Number": "777052448" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p51", name: "LTA31, SIMSEI CARRYING CASE", description: "SIMSEI Carrying Case", category: "Accessories", image: "", specs: { "Item Number": "777013401" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p52", name: "LTA25, SIMSEI 12MM FIOS DEMO TROCAR", description: "SIMSEI 12mm FIOS Demo Trocar", category: "Accessories", image: "", specs: { "Item Number": "777052312" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Power Supplies ===
+  { id: "p53", name: "LTP10, SIMSEI POWER SUPPLY", description: "SIMSEI Power Supply", category: "Power Supplies", image: "", specs: { "Item Number": "777028101" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p54", name: "LTP11, SIMSEI POWER ADAPTER USA & JP", description: "SIMSEI Power Adapter for USA & Japan", category: "Power Supplies", image: "", specs: { "Item Number": "777052322" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p55", name: "LTP12, SIMSEI POWER ADAPTER UK", description: "SIMSEI Power Adapter for UK", category: "Power Supplies", image: "", specs: { "Item Number": "777052323" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p56", name: "LTP13, SIMSEI POWER ADAPTER EU & SA", description: "SIMSEI Power Adapter for EU & South America", category: "Power Supplies", image: "", specs: { "Item Number": "777052325" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p57", name: "LTP14, SIMSEI POWER ADAPTER AU", description: "SIMSEI Power Adapter for Australia", category: "Power Supplies", image: "", specs: { "Item Number": "777052324" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Additional Consumables ===
+  { id: "p58", name: "LTC16, SIMSEI GelPOINT PLATFORM PK", description: "SIMSEI GelPOINT Platform Pack", category: "Consumables", image: "", specs: { "Item Number": "777020001" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p59", name: "LTC23, SIMSEI GELPOINT PATH PLATFORM PK", description: "SIMSEI GelPOINT Path Platform Pack", category: "Consumables", image: "", specs: { "Item Number": "777006201" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p60", name: "LTC01, SIMSEI PRO LAYERED INSERT", description: "SIMSEI Pro Layered Insert", category: "Consumables", image: "", specs: { "Item Number": "777052582" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p61", name: "LTC01R, SIMSEI PRO LAYERED INSERT", description: "SIMSEI Pro Layered Insert (Replacement)", category: "Consumables", image: "", specs: { "Item Number": "777052583" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Clinical Education ===
+  { id: "p62", name: "LCE01, CLIN ED GENERAL SURGERY TRAY", description: "Clinical Education General Surgery Tray", category: "Clinical Education", image: "", specs: { "Item Number": "777034201" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p63", name: "LCE01R, CLIN ED GENERAL SURGERY TRAY", description: "Clinical Education General Surgery Tray (Replacement)", category: "Clinical Education", image: "", specs: { "Item Number": "777044901" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p64", name: "LCE02, CLIN ED HYSTERECTOMY TRAY", description: "Clinical Education Hysterectomy Tray", category: "Clinical Education", image: "", specs: { "Item Number": "777034701" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p65", name: "LCE02R, CLIN ED HYSTERECTOMY TRAY", description: "Clinical Education Hysterectomy Tray (Replacement)", category: "Clinical Education", image: "", specs: { "Item Number": "777045001" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p66", name: "LCE03, CLIN ED GASTRIC SLEEVE TRAY", description: "Clinical Education Gastric Sleeve Tray", category: "Clinical Education", image: "", specs: { "Item Number": "777035001" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p67", name: "LCE03R, CLIN ED GASTRIC SLEEVE TRAY", description: "Clinical Education Gastric Sleeve Tray (Replacement)", category: "Clinical Education", image: "", specs: { "Item Number": "777045101" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p68", name: "LCE04, CLIN ED REMOVABLE LIVER", description: "Clinical Education Removable Liver", category: "Clinical Education", image: "", specs: { "Item Number": "777052001" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p69", name: "LCE04R, CLIN ED REMOVABLE LIVER", description: "Clinical Education Removable Liver (Replacement)", category: "Clinical Education", image: "", specs: { "Item Number": "777052004" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p70", name: "LCE05, CLIN ED GYN PATHOLOGY TRAY", description: "Clinical Education GYN Pathology Tray", category: "Clinical Education", image: "", specs: { "Item Number": "777052039" }, visibleTo: ["s1", "s2", "s3"] },
+  { id: "p71", name: "LCE05R, CLIN ED GYN PATHOLOGY TRAY", description: "Clinical Education GYN Pathology Tray (Replacement)", category: "Clinical Education", image: "", specs: { "Item Number": "777052055" }, visibleTo: ["s1", "s2", "s3"] },
+
+  // === Additional Task Trainers ===
+  { id: "p72", name: "LTT26, SIMSEI TRANSANAL ADAPTER SLEEVE 5/PK", description: "SIMSEI Transanal Adapter Sleeve, 5 pack", category: "Task Trainers & Models", image: "", specs: { "Item Number": "777052093" }, visibleTo: ["s1", "s2", "s3"] },
 ];
 
 const defaultStakeholders: Stakeholder[] = [
