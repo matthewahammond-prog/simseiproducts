@@ -27,7 +27,7 @@ const defaultProducts: Product[] = [
     name: "Premium Oak Desk",
     description: "Handcrafted solid oak desk with cable management and adjustable height mechanism. Perfect for executive offices.",
     category: "Furniture",
-    price: 1299,
+    
     image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&h=400&fit=crop",
     specs: { Material: "Solid Oak", Dimensions: "160×80×75cm", Weight: "45kg", Warranty: "5 years" },
     visibleTo: ["s1", "s2"],
