@@ -37,7 +37,7 @@ const defaultProducts: Product[] = [
     name: "Ergonomic Task Chair",
     description: "Advanced lumbar support with breathable mesh back. Fully adjustable armrests and seat depth.",
     category: "Furniture",
-    price: 849,
+    
     image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&h=400&fit=crop",
     specs: { Material: "Mesh + Aluminum", "Max Weight": "150kg", Adjustments: "12-point", Warranty: "10 years" },
     visibleTo: ["s1", "s3"],
