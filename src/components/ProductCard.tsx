@@ -21,7 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </Badge>
             <h3 className="font-serif text-xl text-foreground mb-1">{product.name}</h3>
             <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{product.description}</p>
-            <p className="text-lg font-semibold text-foreground">${product.price.toLocaleString()}</p>
+            
           </CardContent>
         </Card>
       </DialogTrigger>
