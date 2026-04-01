@@ -335,6 +335,32 @@ function VisibilityTab({ products, stakeholders, onRefresh }: { products: Produc
     onRefresh();
   };
 
+  const selectAllForMember = (stakeholderId: string) => {
+    const allProducts = getProducts();
+    allProducts.forEach((p) => {
+      if (!p.visibleTo.includes(stakeholderId)) {
+        p.visibleTo.push(stakeholderId);
+      }
+    });
+    saveProducts(allProducts);
+    onRefresh();
+  };
+
+  const deselectAllForMember = (stakeholderId: string) => {
+    const allProducts = getProducts();
+    allProducts.forEach((p) => {
+      p.visibleTo = p.visibleTo.filter((id) => id !== stakeholderId);
+    });
+    saveProducts(allProducts);
+    onRefresh();
+  };
+
+  const allSelectedForMember = (stakeholderId: string) =>
+    products.every((p) => p.visibleTo.includes(stakeholderId));
+
+  const noneSelectedForMember = (stakeholderId: string) =>
+    products.every((p) => !p.visibleTo.includes(stakeholderId));
+
   return (
     <div>
       <h2 className="text-2xl font-serif mb-4">Visibility Matrix</h2>
@@ -346,7 +372,21 @@ function VisibilityTab({ products, stakeholders, onRefresh }: { products: Produc
               <th className="text-left py-3 pr-4 font-medium text-foreground">Product</th>
               {stakeholders.map((s) => (
                 <th key={s.id} className="text-center py-3 px-3 font-medium text-foreground whitespace-nowrap">
-                  {s.name.split(" ")[0]}
+                  <div className="flex flex-col items-center gap-1">
+                    {s.name.split(" ")[0]}
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-xs h-6 px-2"
+                      onClick={() =>
+                        allSelectedForMember(s.id)
+                          ? deselectAllForMember(s.id)
+                          : selectAllForMember(s.id)
+                      }
+                    >
+                      {allSelectedForMember(s.id) ? "Deselect All" : "Select All"}
+                    </Button>
+                  </div>
                 </th>
               ))}
             </tr>
