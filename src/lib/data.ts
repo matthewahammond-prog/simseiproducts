@@ -36,6 +36,56 @@ export async function getProducts(): Promise<Product[]> {
   }));
 }
 
+// Fetch only products visible to a specific user (explicit join for stakeholders)
+export async function getVisibleProducts(userId: string): Promise<Product[]> {
+  const { data, error } = await supabase
+    .from("product_visibility")
+    .select("products(*)")
+    .eq("user_id", userId);
+  if (error) {
+    console.error("Error fetching visible products:", error);
+    return [];
+  }
+  const products = (data || [])
+    .map((row: any) => row.products)
+    .filter(Boolean)
+    .map((p: any) => ({
+      id: p.id,
+      name: p.name,
+      description: p.description || "",
+      category: p.category,
+      image: p.image || "",
+      specs: (p.specs as Record<string, string>) || {},
+    }));
+  products.sort((a, b) => a.name.localeCompare(b.name));
+  return products;
+}
+
+// Team member management (calls edge function for auth user create/delete)
+export async function createTeamMember(payload: { name: string; email: string; company: string; password?: string }) {
+  const { data, error } = await supabase.functions.invoke("manage-team-member", {
+    body: { action: "create", ...payload },
+  });
+  if (error) return { error: error.message };
+  if (data?.error) return { error: data.error };
+  return { data };
+}
+
+export async function deleteTeamMember(userId: string) {
+  const { data, error } = await supabase.functions.invoke("manage-team-member", {
+    body: { action: "delete", userId },
+  });
+  if (error) return { error: error.message };
+  if (data?.error) return { error: data.error };
+  return { data };
+}
+
+export async function updateTeamMember(userId: string, updates: { name?: string; company?: string }) {
+  const { error } = await supabase.from("profiles").update(updates).eq("id", userId);
+  if (error) return { error: error.message };
+  return { data: true };
+}
+
 export async function getProductById(id: string): Promise<Product | null> {
   const { data, error } = await supabase
     .from("products")

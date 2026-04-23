@@ -3,6 +3,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import {
   getProducts, saveProduct, deleteProduct as deleteProductApi,
   getProfiles, getAllProductVisibility, toggleProductVisibility, setProductVisibility,
+  createTeamMember, updateTeamMember, deleteTeamMember,
   Product, Profile,
 } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -66,7 +67,7 @@ export default function AdminDashboard() {
             <ProductsTab products={products} profiles={profiles} visibility={visibility} onRefresh={refresh} />
           </TabsContent>
           <TabsContent value="stakeholders">
-            <StakeholdersTab profiles={profiles} />
+            <StakeholdersTab profiles={profiles} onRefresh={refresh} />
           </TabsContent>
           <TabsContent value="visibility">
             <VisibilityTab products={products} profiles={profiles} visibility={visibility} onRefresh={refresh} />
@@ -207,12 +208,26 @@ function ProductFormDialog({ product, profiles, visibleTo, onSave }: { product?:
   );
 }
 
-function StakeholdersTab({ profiles }: { profiles: Profile[] }) {
+function StakeholdersTab({ profiles, onRefresh }: { profiles: Profile[]; onRefresh: () => void }) {
+  const { toast } = useToast();
   const stakeholders = profiles.filter(p => p.name !== "Admin");
+
+  const handleDelete = async (id: string, name: string) => {
+    if (!confirm(`Delete team member "${name}"? This cannot be undone.`)) return;
+    const res = await deleteTeamMember(id);
+    if (res.error) {
+      toast({ title: "Error deleting", description: res.error, variant: "destructive" });
+    } else {
+      toast({ title: "Team member deleted" });
+      onRefresh();
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-serif">Team Members</h2>
+        <TeamMemberFormDialog onSave={onRefresh} />
       </div>
       <div className="space-y-3">
         {stakeholders.map((s) => (
@@ -225,11 +240,99 @@ function StakeholdersTab({ profiles }: { profiles: Profile[] }) {
                 <p className="font-medium text-foreground">{s.name}</p>
                 <p className="text-sm text-muted-foreground">{s.email} · {s.company}</p>
               </div>
+              <TeamMemberFormDialog member={s} onSave={onRefresh} />
+              <Button variant="ghost" size="icon" onClick={() => handleDelete(s.id, s.name)}>
+                <Trash2 className="h-4 w-4 text-destructive" />
+              </Button>
             </CardContent>
           </Card>
         ))}
       </div>
     </div>
+  );
+}
+
+function TeamMemberFormDialog({ member, onSave }: { member?: Profile; onSave: () => void }) {
+  const { toast } = useToast();
+  const isEdit = !!member;
+  const [open, setOpen] = useState(false);
+  const [form, setForm] = useState({
+    name: member?.name || "",
+    email: member?.email || "",
+    company: member?.company || "",
+    password: "",
+  });
+  const [saving, setSaving] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!form.name || !form.email) {
+      toast({ title: "Name and email are required", variant: "destructive" });
+      return;
+    }
+    setSaving(true);
+    if (isEdit) {
+      const res = await updateTeamMember(member!.id, { name: form.name, company: form.company });
+      if (res.error) {
+        toast({ title: "Error updating", description: res.error, variant: "destructive" });
+      } else {
+        toast({ title: "Team member updated" });
+        onSave();
+        setOpen(false);
+      }
+    } else {
+      const res = await createTeamMember({
+        name: form.name,
+        email: form.email,
+        company: form.company,
+        password: form.password || undefined,
+      });
+      if (res.error) {
+        toast({ title: "Error creating", description: res.error, variant: "destructive" });
+      } else {
+        const tempPwd = (res.data as any)?.tempPassword;
+        toast({
+          title: "Team member added",
+          description: tempPwd ? `Temporary password: ${tempPwd}` : undefined,
+        });
+        onSave();
+        setOpen(false);
+        setForm({ name: "", email: "", company: "", password: "" });
+      }
+    }
+    setSaving(false);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        {isEdit ? (
+          <Button variant="ghost" size="icon"><Pencil className="h-4 w-4" /></Button>
+        ) : (
+          <Button size="sm"><Plus className="h-4 w-4 mr-1" /> Add Team Member</Button>
+        )}
+      </DialogTrigger>
+      <DialogContent className="max-w-md">
+        <DialogHeader><DialogTitle className="font-serif">{isEdit ? "Edit Team Member" : "Add Team Member"}</DialogTitle></DialogHeader>
+        <div className="space-y-4">
+          <div className="space-y-2"><Label>Name *</Label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></div>
+          <div className="space-y-2">
+            <Label>Email *</Label>
+            <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} disabled={isEdit} />
+            {isEdit && <p className="text-xs text-muted-foreground">Email cannot be changed.</p>}
+          </div>
+          <div className="space-y-2"><Label>Company</Label><Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} /></div>
+          {!isEdit && (
+            <div className="space-y-2">
+              <Label>Password (optional)</Label>
+              <Input type="text" placeholder="Leave blank to auto-generate" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
+            </div>
+          )}
+          <Button onClick={handleSubmit} className="w-full" disabled={saving}>
+            {saving ? "Saving..." : isEdit ? "Save Changes" : "Add Team Member"}
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
