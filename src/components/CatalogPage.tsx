@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { getProducts, Product } from "@/lib/data";
+import { getVisibleProducts, Product } from "@/lib/data";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,18 +8,19 @@ import { Badge } from "@/components/ui/badge";
 import { LogOut, Search } from "lucide-react";
 
 export default function CatalogPage() {
-  const { profile, logout } = useAuth();
+  const { profile, user, logout } = useAuth();
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts().then((p) => {
+    if (!user) return;
+    getVisibleProducts(user.id).then((p) => {
       setProducts(p);
       setLoading(false);
     });
-  }, []);
+  }, [user]);
 
   const categories = useMemo(() => {
     const cats = [...new Set(products.map((p) => p.category))];
